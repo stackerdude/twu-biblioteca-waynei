@@ -1,7 +1,6 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.menuItems;
 
-import com.twu.biblioteca.menuItems.BookManagerCheckoutMenuItem;
-import com.twu.biblioteca.BookManager;
+import com.twu.biblioteca.modelManagers.BookManager;
 import com.twu.biblioteca.menuItems.BookManagerGiveBackMenuItem;
 import org.junit.Before;
 import org.junit.Rule;

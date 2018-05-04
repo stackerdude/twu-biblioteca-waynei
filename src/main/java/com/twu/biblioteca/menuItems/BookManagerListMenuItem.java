@@ -1,6 +1,6 @@
 package com.twu.biblioteca.menuItems;
 
-import com.twu.biblioteca.BookManager;
+import com.twu.biblioteca.modelManagers.BookManager;
 
 public class BookManagerListMenuItem extends MenuItemBase {
 

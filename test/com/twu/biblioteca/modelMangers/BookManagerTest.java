@@ -1,4 +1,6 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.modelMangers;
+import com.twu.biblioteca.modelManagers.BookManager;
+import com.twu.biblioteca.models.Book;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;

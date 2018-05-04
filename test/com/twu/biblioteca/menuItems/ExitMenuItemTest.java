@@ -1,4 +1,4 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.menuItems;
 
 import com.twu.biblioteca.menuItems.ExitMenuItem;
 import org.junit.Before;

@@ -1,4 +1,4 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.models;
 
 public class Book extends LibraryItemBase{
     public Book(String bookName, String bookAuthor, Integer bookYearPublished) {
