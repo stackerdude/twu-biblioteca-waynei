@@ -1,56 +1,36 @@
 package com.twu.biblioteca;
 
-public class Book {
-    private String bookName;
-    private String bookAuthor;
-    private Integer bookYearPublished;
-    private boolean checkedout;
-
-    private final String SUCCESS_CHECKOUT = "Thank you! Enjoy the book.";
-    private final String ERROR_CHECKOUT = "That book is not available.";
-    private final String SUCCESS_RETURN = "Thank you for returning the book.";
-    private final String ERROR_RETURN = "That is not a valid book to return.";
-
-
+public class Book extends LibraryItemBase{
     public Book(String bookName, String bookAuthor, Integer bookYearPublished) {
-        this.bookName = bookName;
-        this.bookAuthor = bookAuthor;
-        this.bookYearPublished = bookYearPublished;
-        this.checkedout = false;
-
+        super(bookName, bookAuthor, bookYearPublished);
     }
 
-    public String checkout() {
-        if (this.isCheckedout() == true){
-            return ERROR_CHECKOUT;
-        }
-
-        this.checkedout = true;
-        return SUCCESS_CHECKOUT;
-    }
-
-    public String giveBack() {
-        if(this.isCheckedout() == false){
-            return ERROR_RETURN;
-        }
-        this.checkedout = false;
-        return SUCCESS_RETURN;
-    }
 
     public String getBookName() {
-        return bookName;
+        return this.getLibraryItemName();
     }
 
     public String getBookAuthor() {
-        return bookAuthor;
+        return this.getLibraryItemCreator();
     }
 
     public Integer getBookYearPublished() {
-        return bookYearPublished;
+        return this.getLibraryItemRelease();
+    }
+    protected String getSuccessCheckout() {
+        return "Thank you! Enjoy the book.";
     }
 
-    public boolean isCheckedout() {
-        return checkedout;
+    protected String getErrorCheckout() {
+        return "That book is not available.";
+    }
+
+    protected String getGiveBackSuccess() {
+        return "Thank you for returning the book.";
+    }
+
+    protected String getGiveBackError() {
+        return "That is not a valid book to return.";
     }
 
     public Book is(Book book){

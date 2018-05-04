@@ -15,7 +15,7 @@ public class BookManager  {
     public ArrayList<String> getBooksInColumnFormat() {
         ArrayList<String> books = new ArrayList<String>();
         for(Book book : this.books){
-            if(!book.isCheckedout()){
+            if(!book.isCheckedOut()){
                 books.add(book.getBookName() + "     " + book.getBookAuthor()+ "     "+book.getBookYearPublished());
             }
         }

@@ -27,12 +27,12 @@ public class BookTest {
     public void TestBookShouldMarkAsCheckout(){
         String marked = book.checkout();
         assertEquals("Thank you! Enjoy the book.", marked);
-        assertEquals(true, book.isCheckedout());
+        assertEquals(true, book.isCheckedOut());
     }
 
     @Test
     public void TestBookShouldDefaultAsNotCheckout(){
-        assertEquals(false, book.isCheckedout());
+        assertEquals(false, book.isCheckedOut());
     }
 
     @Test
@@ -51,7 +51,7 @@ public class BookTest {
         book.checkout();
         String wasReturned = book.giveBack();
         assertEquals("Thank you for returning the book.", wasReturned);
-        assertFalse(book.isCheckedout());
+        assertFalse(book.isCheckedOut());
 
     }
 

@@ -1,6 +1,5 @@
 package com.twu.biblioteca;
 import com.twu.biblioteca.menuItems.BookManagerCheckoutMenuItem;
-import com.twu.biblioteca.menuItems.BookManagerListMenuItem;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -12,7 +11,6 @@ import static org.mockito.Mockito.verify;
 
 import org.junit.contrib.java.lang.system.SystemOutRule;
 
-import java.util.ArrayList;
 
 public class BookManagerCheckoutMenuListTest {
 
