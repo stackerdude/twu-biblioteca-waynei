@@ -18,47 +18,61 @@ public class BookTest {
         String bookName = "The Great Gatsby";
         String bookAuthor = "F. Scott Fitzgerald";
         Integer bookYearPublished = 1925;
-        assertEquals(bookName, book.bookName);
-        assertEquals(bookAuthor, book.bookAuthor);
-        assertEquals(bookYearPublished, book.bookYearPublished);
+        assertEquals(bookName, book.getBookName());
+        assertEquals(bookAuthor, book.getBookAuthor());
+        assertEquals(bookYearPublished, book.getBookYearPublished());
     }
 
     @Test
     public void TestBookShouldMarkAsCheckout(){
-        Boolean marked = book.checkout();
-        assertEquals(true, marked);
-        assertEquals(true, book.checkedout);
+        String marked = book.checkout();
+        assertEquals("Thank you! Enjoy the book.", marked);
+        assertEquals(true, book.isCheckedout());
     }
 
     @Test
     public void TestBookShouldDefaultAsNotCheckout(){
-        assertEquals(false, book.checkedout);
+        assertEquals(false, book.isCheckedout());
     }
 
     @Test
     public void TestCheckedOutBookCannotBeCheckoutAgain(){
 
-        Boolean initialCheckout = book.checkout();
-        Boolean repeatCheckout = book.checkout();
+        String initialCheckout = book.checkout();
+        String repeatCheckout = book.checkout();
 
-        assertEquals(true, initialCheckout);
-        assertEquals(false, repeatCheckout);
+        assertEquals("Thank you! Enjoy the book.", initialCheckout);
+        assertEquals("That book is not available.", repeatCheckout);
     }
 
 
     @Test
     public void TestBookCanBeReturned(){
         book.checkout();
-        Boolean wasReturned = book.giveBack();
-        assertEquals(true, wasReturned);
-        assertEquals(false, book.checkedout);
+        String wasReturned = book.giveBack();
+        assertEquals("Thank you for returning the book.", wasReturned);
+        assertFalse(book.isCheckedout());
 
     }
 
     @Test
     public void TestReturnedBookCannotBeGivenBack(){
-        Boolean giveBack = book.giveBack();
-        assertEquals(false, giveBack);
+        String giveBack = book.giveBack();
+        assertEquals("That is not a valid book to return.", giveBack);
+    }
+
+    @Test
+    public void TestBookIsBook(){
+        Book book1 = generateBook();
+        Book book2 = generateBook();
+        assertEquals(book1, book1.is(book2));
+    }
+
+    @Test
+    public void TestBookIsNotBook(){
+        Book book1 = generateBook();
+        Book book2 = new Book("A Different Book", "F. Scott Fitzgerald", 1925);
+        assertNull(book1.is(book2));
     }
 
 
