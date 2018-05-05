@@ -1,7 +1,8 @@
 package com.twu.biblioteca.menuItems;
-import com.twu.biblioteca.menuItems.BookManagerListMenuItem;
 
 import com.twu.biblioteca.modelManagers.BookManager;
+import com.twu.biblioteca.modelManagers.UserManager;
+import com.twu.biblioteca.models.User;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -21,11 +22,13 @@ public class BookManagerListMenuItemTest {
 
     private BookManagerListMenuItem bookManagerMenuItem;
     private BookManager bookManager;
+    UserManager userManager;
+
 
     @Before
     public void onBefore(){
         this.bookManager = mock(BookManager.class);
-        this.bookManagerMenuItem = new BookManagerListMenuItem("List Books", this.bookManager);
+        this.bookManagerMenuItem = new BookManagerListMenuItem("List Books", this.bookManager, userManager);
 
     }
 

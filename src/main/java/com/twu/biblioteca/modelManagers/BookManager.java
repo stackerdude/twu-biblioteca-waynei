@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 
-public class BookManager  {
+public class BookManager {
     public ArrayList<Book> books;
 
     public BookManager(ArrayList<Book> books) {
@@ -31,25 +31,6 @@ public class BookManager  {
         }
     }
 
-    public String getBookDetailsAndCheckout() {
-        Book inputBook = getBookDetails();
-        Book libraryBook = getBookFromLibrary(inputBook);
-        if(libraryBook != null){
-            return libraryBook.checkout();
-
-        }
-        return "That book is not available.";
-
-    }
-
-    public String getBookDetailsAndGiveBack() {
-        Book inputBook = getBookDetails();
-        Book libraryBook = getBookFromLibrary(inputBook);
-        if(libraryBook != null){
-            return libraryBook.giveBack();
-
-        }
-        return "That is not a valid book to return.1";    }
 
     public Book getBookFromLibrary(Book inputBook){
         for(Book book : books){
@@ -70,4 +51,5 @@ public class BookManager  {
         Integer publicationYear = Integer.parseInt(scanner.nextLine());
         return new Book(bookName, authorName, publicationYear);
     }
+
 }

@@ -43,9 +43,9 @@ public class Movie extends LibraryItemBase {
         return "That is not a valid movie to return.";
     }
 
-    public Movie is(Movie movie2) {
-        if((movie2.getMovieName().equals(this.getMovieName())) && (movie2.getMovieDirector().equals(this.getMovieDirector()))
-                && (movie2.getMovieRelease().equals(this.getMovieRelease())) && (movie2.getMovieRating().equals(this.getMovieRating()))){
+    public Movie is(Movie inputItem) {
+        if((inputItem.getMovieName().equals(this.getMovieName())) && (inputItem.getMovieDirector().equals(this.getMovieDirector()))
+                && (inputItem.getMovieRelease().equals(this.getMovieRelease())) && (inputItem.getMovieRating().equals(this.getMovieRating()))){
             return this;
         }
         return null;    }

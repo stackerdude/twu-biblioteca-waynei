@@ -25,6 +25,7 @@ abstract public class LibraryItemBase {
 
     }
 
+
     public String getLibraryItemName() {
         return libraryItemName;
     }
@@ -58,5 +59,10 @@ abstract public class LibraryItemBase {
         this.checkedOut = false;
         return getGiveBackSuccess();
     }
+
+     public LibraryItemBase is(LibraryItemBase inputItem){
+        return null;
+    };
+
 
 }

@@ -1,6 +1,6 @@
 package com.twu.biblioteca.menuItems;
 
-import com.twu.biblioteca.modelManagers.BookManager;
+import com.twu.biblioteca.modelManagers.MovieManager;
 import com.twu.biblioteca.modelManagers.UserManager;
 import com.twu.biblioteca.models.User;
 import org.junit.Before;
@@ -13,38 +13,38 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
-public class BookManagerGiveBackMenuItemTest {
+public class MovieMangerGiveBackMenuItemTest {
 
 
 
     @Rule
     public final SystemOutRule systemOutRule = new SystemOutRule().enableLog();
 
-    private BookManagerGiveBackMenuItem bookManagerGiveBackMenuItem;
-    private BookManager bookManager;
+    private MovieManagerGiveBackMenuItem movieManagerGiveBackMenuItem;
+    private MovieManager movieManager;
     UserManager userManager;
+
 
 
 
 
     @Before
     public void onBefore(){
-        this.bookManager = mock(BookManager.class);
-        this.bookManagerGiveBackMenuItem  = new BookManagerGiveBackMenuItem("Give Back Book", bookManager, userManager);
+        this.movieManager = mock(MovieManager.class);
+        this.movieManagerGiveBackMenuItem  = new MovieManagerGiveBackMenuItem("Give Back Movie", movieManager, userManager);
 
     }
 
     @Test
     public void TestItemNameIsCorrect(){
-        assertEquals("Give Back Book", this.bookManagerGiveBackMenuItem.getMenuItemName());
+        assertEquals("Give Back Movie", this.movieManagerGiveBackMenuItem.getMenuItemName());
     }
 
     @Test
-    public void TestShouldCallGetBookDetailsForGiveback(){
-        this.bookManagerGiveBackMenuItem.wasSelected();
-        verify(bookManager, times(1)).getBookDetails();
+    public void TestShouldCallGetMovieDetailsForGiveback(){
+        this.movieManagerGiveBackMenuItem.wasSelected();
+        verify(movieManager, times(1)).getMovieDetails();
     }
-
 
 
 

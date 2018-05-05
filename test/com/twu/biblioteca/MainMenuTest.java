@@ -41,16 +41,16 @@ public class MainMenuTest {
     }
 
     @Test
-    public void TestShouldPrintOptions(){
+    public void TestShouldPrintOptionsWhenNotLoggedIn(){
 
         mainMenu.boot();
         assertTrue(systemOutRule.getLog().contains("1 - List All Books"));
-        assertTrue(systemOutRule.getLog().contains("2 - Checkout A Book"));
-        assertTrue(systemOutRule.getLog().contains("3 - Return A Book"));
-//        assertTrue(systemOutRule.getLog().contains("4 - Quit"));
-//        assertTrue(systemOutRule.getLog().contains("Select a valid option (enter corresponding number):"));
+        assertTrue(systemOutRule.getLog().contains("4 - List All Movies"));
+        assertTrue(systemOutRule.getLog().contains("7 - Login"));
+        assertTrue(systemOutRule.getLog().contains("10 - Exit"));
 
     }
+
 
 
 

@@ -8,6 +8,9 @@ import org.junit.Test;
 
 import org.junit.contrib.java.lang.system.SystemOutRule;
 import org.junit.contrib.java.lang.system.TextFromStandardInputStream;
+
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 import static org.junit.contrib.java.lang.system.TextFromStandardInputStream.emptyStandardInputStream;
 
 
@@ -15,7 +18,7 @@ import static org.junit.contrib.java.lang.system.TextFromStandardInputStream.emp
 import java.util.ArrayList;
 
 import static org.junit.Assert.*;
-
+import static org.mockito.Mockito.times;
 
 
 public class BookManagerTest {
@@ -76,6 +79,17 @@ public class BookManagerTest {
         Book libraryBook = bookManager.getBookFromLibrary(book);
         assertNotNull(libraryBook);
     }
+
+    @Test
+    public void TestNotAbleToIncorrectBookFromLibrary(){
+        Book badBook = new Book("Bad Book", "F. Scott Fitzger", 1925);
+        Book libraryBook = bookManager.getBookFromLibrary(badBook);
+        assertNull(libraryBook);
+    }
+
+
+
+
 
 
 }
