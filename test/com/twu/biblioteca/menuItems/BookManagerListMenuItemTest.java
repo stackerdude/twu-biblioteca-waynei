@@ -2,7 +2,6 @@ package com.twu.biblioteca.menuItems;
 
 import com.twu.biblioteca.modelManagers.BookManager;
 import com.twu.biblioteca.modelManagers.UserManager;
-import com.twu.biblioteca.models.User;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -40,6 +39,6 @@ public class BookManagerListMenuItemTest {
     @Test
     public void TestShouldCallListInBookManager(){
         this.bookManagerMenuItem.wasSelected();
-        verify(this.bookManager, times(1)).listBooks();
+        verify(this.bookManager, times(1)).listItems();
     }
 }

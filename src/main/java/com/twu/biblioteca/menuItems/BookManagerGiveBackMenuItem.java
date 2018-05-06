@@ -3,8 +3,9 @@ package com.twu.biblioteca.menuItems;
 import com.twu.biblioteca.modelManagers.BookManager;
 import com.twu.biblioteca.modelManagers.UserManager;
 import com.twu.biblioteca.models.Book;
-import com.twu.biblioteca.models.User;
-
+/**
+ * Responsible for handling Returning/Giving back of books
+ */
 public class BookManagerGiveBackMenuItem extends MenuItemBase {
         private BookManager bookManager;
 
@@ -13,7 +14,10 @@ public class BookManagerGiveBackMenuItem extends MenuItemBase {
         this.bookManager = bookManager;
         this.setOnlyVisibleWhenLoggedIn(true);
     }
-
+    /**
+     * Captures the book information and attempts to give  it back
+     * Prints success/error messages where appropriate
+     */
     public void wasSelected() {
 
         Book userBook = this.bookManager.getBookDetails();

@@ -39,6 +39,6 @@ public class MovieMangerListMenuItemTest {
     @Test
     public void TestShouldCallListInMovieManager(){
         this.movieManagerMenuItem.wasSelected();
-        verify(this.movieManager, times(1)).listMovies();
+        verify(this.movieManager, times(1)).listItems();
     }
 }

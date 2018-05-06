@@ -1,6 +1,9 @@
 package com.twu.biblioteca.menuItems;
 
 import com.twu.biblioteca.modelManagers.UserManager;
+/**
+ * Responsible for handling user logout
+ */
 
 public class UserManagerLogoutMenuItem extends MenuItemBase {
 

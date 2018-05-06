@@ -6,7 +6,7 @@ import com.twu.biblioteca.models.Movie;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class MovieManager {
+public class MovieManager implements LibraryItemManagerInterface{
     public ArrayList<Movie> movies;
 
     public MovieManager(ArrayList<Movie> movies) {
@@ -14,7 +14,7 @@ public class MovieManager {
 
     }
 
-    public ArrayList<String> getMoviesInColumnFormat() {
+    public ArrayList<String> getItemsInColumnFormat() {
 
         ArrayList<String> movies = new ArrayList<String>();
         for(Movie movie : this.movies){
@@ -25,6 +25,10 @@ public class MovieManager {
         return movies;
     }
 
+    /**
+     * Capture the information needed to query a movie
+     * @return Captured Infomation parsed into a movie
+     */
     public Movie getMovieDetails() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Movie Name: ");
@@ -38,6 +42,11 @@ public class MovieManager {
         return new Movie(movieName,directorName , releaseYear, movieRating);
     }
 
+    /**
+     * Returns a Movie from the library if it exists
+     * @param inputMovie The movie that was requested
+     * @return LibraryMovie Movie that matches the request
+     */
     public Movie getMovieFromLibrary(Movie inputMovie) {
 
         for(Movie movie : movies){
@@ -48,8 +57,8 @@ public class MovieManager {
         return null;    }
 
 
-    public void listMovies() {
-        ArrayList<String> formattedMovies = getMoviesInColumnFormat();
+    public void listItems() {
+        ArrayList<String> formattedMovies = getItemsInColumnFormat();
         for (String movieString : formattedMovies){
             System.out.println(movieString);
         }

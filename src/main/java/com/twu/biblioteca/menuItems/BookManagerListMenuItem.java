@@ -2,8 +2,9 @@ package com.twu.biblioteca.menuItems;
 
 import com.twu.biblioteca.modelManagers.BookManager;
 import com.twu.biblioteca.modelManagers.UserManager;
-import com.twu.biblioteca.models.User;
-
+/**
+ * Responsible for handling of book listing
+ */
 public class BookManagerListMenuItem extends MenuItemBase {
 
     private BookManager manager;
@@ -15,8 +16,11 @@ public class BookManagerListMenuItem extends MenuItemBase {
 
     }
 
+    /**
+     * Prints a list of books that are available
+     */
     public void wasSelected() {
-        manager.listBooks();
+        manager.listItems();
     }
 }
 

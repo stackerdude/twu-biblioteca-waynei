@@ -19,6 +19,9 @@ public class UserManager {
     }
 
 
+    /**
+     * Capture the information needed to login a user
+     */
     public User getUserDetailsAndLogin() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Library Number: ");
@@ -28,6 +31,12 @@ public class UserManager {
         return  authenticateDetails(libraryNumber, password);
     }
 
+    /**
+     * Attempts to login a user
+     * @param libraryNumber
+     * @param password
+     * @return
+     */
     public User authenticateDetails(String libraryNumber, String password) {
         for (User user : this.users) {
             if (user.authenticate(libraryNumber, password)) {
@@ -41,7 +50,6 @@ public class UserManager {
     public Boolean getLoggedIn() {
         return loggedIn;
     }
-
 
     public void setLoggedIn(Boolean loggedIn) {
         this.loggedIn = loggedIn;

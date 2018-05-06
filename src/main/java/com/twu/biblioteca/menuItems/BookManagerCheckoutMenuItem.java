@@ -1,9 +1,11 @@
 package com.twu.biblioteca.menuItems;
-
 import com.twu.biblioteca.modelManagers.BookManager;
 import com.twu.biblioteca.modelManagers.UserManager;
 import com.twu.biblioteca.models.Book;
-import com.twu.biblioteca.models.User;
+
+/**
+ * Responsible for handling Checking out of books
+ */
 
 public class BookManagerCheckoutMenuItem extends MenuItemBase{
 
@@ -16,6 +18,10 @@ public class BookManagerCheckoutMenuItem extends MenuItemBase{
 
     }
 
+    /**
+     * Captures the book information and attempts to check it out from library
+     * Prints success/error messages where appropriate
+     */
     public void wasSelected() {
         Book userBook = this.bookManager.getBookDetails();
         Book libraryBook = this.bookManager.getBookFromLibrary(userBook);

@@ -2,8 +2,10 @@ package com.twu.biblioteca.menuItems;
 
 import com.twu.biblioteca.modelManagers.MovieManager;
 import com.twu.biblioteca.modelManagers.UserManager;
-import com.twu.biblioteca.models.User;
 
+/**
+ * Responsible for handling of movies listing
+ */
 public class MovieManagerListMenuItem extends MenuItemBase {
     private MovieManager movieManager;
 
@@ -14,7 +16,11 @@ public class MovieManagerListMenuItem extends MenuItemBase {
 
     }
 
+
+    /**
+     * Prints a list of movies that are available
+     */
     public void wasSelected() {
-        movieManager.listMovies();
+        movieManager.listItems();
     }
 }

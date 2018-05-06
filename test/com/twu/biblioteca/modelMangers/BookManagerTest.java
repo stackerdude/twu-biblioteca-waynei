@@ -53,14 +53,14 @@ public class BookManagerTest {
 
     @Test
     public void TestBookManagerReturnsBooksInColumns(){
-        ArrayList<String> booksInColumns = bookManager.getBooksInColumnFormat();
+        ArrayList<String> booksInColumns = bookManager.getItemsInColumnFormat();
         assertEquals("The Great Gatsby     F. Scott Fitzgerald     1925", booksInColumns.get(0));
     }
 
     @Test
     public void TestBookManagerShouldNotReturnCheckoutBooks(){
         book.checkout();
-        assertEquals(0, bookManager.getBooksInColumnFormat().size());
+        assertEquals(0, bookManager.getItemsInColumnFormat().size());
     }
 
 

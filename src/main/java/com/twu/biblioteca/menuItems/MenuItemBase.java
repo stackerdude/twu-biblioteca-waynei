@@ -1,18 +1,21 @@
 package com.twu.biblioteca.menuItems;
+import com.twu.biblioteca.modelManagers.UserManager;
 
-        import com.twu.biblioteca.modelManagers.UserManager;
-        import com.twu.biblioteca.models.User;
+/**
+ * Abstract Base Class for all menu items
+ */
 
-abstract public class MenuItemBase implements MenuOption {
+abstract public class MenuItemBase {
 
-    private String menuItemName;
-    private Boolean onlyVisibleWhenLoggedIn;
+    private String menuItemName; // Name that appears when displying options
+    private Boolean onlyVisibleWhenLoggedIn; //Whether the item shows when not logged in
     private UserManager userManager;
 
     public MenuItemBase(String menuItemName, UserManager userManager) {
         this.menuItemName = menuItemName;
         this.userManager = userManager;
     }
+
 
     public String getMenuItemName() {
         return menuItemName;
@@ -34,10 +37,17 @@ abstract public class MenuItemBase implements MenuOption {
         this.userManager = userManager;
     }
 
+    /**
+     * Decides if to display the options
+     * If logged in, all options are available, if not, uses getOnlyVisibleWhenLoggedIn to decide
+     * @return Boolean
+     */
     public Boolean shouldDisplay() {
-        if ((this.getUserManager().getLoggedIn()) || !this.getOnlyVisibleWhenLoggedIn()) {
-            return true;
-        }
-        return false;
+        return ((this.getUserManager().getLoggedIn()) || !this.getOnlyVisibleWhenLoggedIn());
     }
+
+    /**
+     * Fucntion that gets called when the menu option is selected
+     */
+    abstract void wasSelected();
 }

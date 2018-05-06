@@ -3,8 +3,9 @@ package com.twu.biblioteca.menuItems;
 import com.twu.biblioteca.modelManagers.MovieManager;
 import com.twu.biblioteca.modelManagers.UserManager;
 import com.twu.biblioteca.models.Movie;
-import com.twu.biblioteca.models.User;
-
+/**
+ * Responsible for handling Checking out of Movies
+ */
 public class MovieManagerCheckoutMenuItem extends MenuItemBase{
 
     private MovieManager movieManager;
@@ -15,7 +16,10 @@ public class MovieManagerCheckoutMenuItem extends MenuItemBase{
         this.setOnlyVisibleWhenLoggedIn(true);
 
     }
-
+    /**
+     * Captures the book information and attempts to check it out from library
+     * Prints success/error messages where appropriate
+     */
     public void wasSelected() {
         Movie userMovie = this.movieManager.getMovieDetails();
         Movie libraryMovie = this.movieManager.getMovieFromLibrary(userMovie);

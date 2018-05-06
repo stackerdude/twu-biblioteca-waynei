@@ -49,7 +49,7 @@ public class MovieManagerTest {
 
     @Test
     public void TestMovieManagerReturnsMoviesInColumns(){
-        ArrayList<String> moviesInColumns = movieManager.getMoviesInColumnFormat();
+        ArrayList<String> moviesInColumns = movieManager.getItemsInColumnFormat();
         assertEquals("The Magnificent Seven     John Sturges     1960     7", moviesInColumns.get(0));
     }
 
