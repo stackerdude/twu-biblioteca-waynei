@@ -64,5 +64,31 @@ public class MovieManager implements LibraryItemManagerInterface{
         }
     }
 
+    public void checkoutItemPressed() {
+        Movie userMovie = this.getMovieDetails();
+        Movie libraryMovie = this.getMovieFromLibrary(userMovie);
+        if(libraryMovie != null){
+            System.out.println(libraryMovie.checkout());
+        }
+        else{
+            System.out.println("That movie is not available.");
 
+        }
+
+    }
+
+    public void returnItemPressed() {
+
+        Movie userMovie = this.getMovieDetails();
+        Movie libraryMovie = this.getMovieFromLibrary(userMovie);
+        if(libraryMovie != null){
+            System.out.println(libraryMovie.giveBack());
+        }
+        else{
+            System.out.println("That is not a valid movie to return.");
+
+        }
+
+
+    }
 }

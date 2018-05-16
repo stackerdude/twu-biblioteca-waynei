@@ -26,12 +26,12 @@ public class MainMenu {
         UserManager userManager = this.userManagerBuilder();
 
 
-        BookManagerListMenuItem bookManagerListMenuItem = new BookManagerListMenuItem("1 - List All Books", bookManager,userManager);
-        BookManagerCheckoutMenuItem bookManagerCheckoutMenuItem = new BookManagerCheckoutMenuItem("2 - Checkout A Book", bookManager,userManager);
-        BookManagerGiveBackMenuItem bookManagerGiveBackMenuItem = new BookManagerGiveBackMenuItem("3 - Return A Book", bookManager,userManager);
-        MovieManagerListMenuItem movieManagerListMenuItem = new MovieManagerListMenuItem("4 - List All Movies",movieManager,userManager);
-        MovieManagerCheckoutMenuItem movieManagerCheckoutMenuItem = new MovieManagerCheckoutMenuItem("5 - Checkout A Movie", movieManager,userManager);
-        MovieManagerGiveBackMenuItem movieManagerGiveBackMenuItem = new MovieManagerGiveBackMenuItem("6 - Return A Movie", movieManager,userManager);
+        ManagerListMenuItem bookManagerListMenuItem = new ManagerListMenuItem("1 - List All Books", bookManager,userManager);
+        ManagerCheckoutMenuItem bookManagerCheckoutMenuItem = new ManagerCheckoutMenuItem("2 - Checkout A Book", bookManager,userManager);
+        ManagerGiveBackMenuItem bookManagerGiveBackMenuItem = new ManagerGiveBackMenuItem("3 - Return A Book", bookManager,userManager);
+        ManagerListMenuItem movieManagerListMenuItem = new ManagerListMenuItem("4 - List All Movies",movieManager,userManager);
+        ManagerCheckoutMenuItem movieManagerCheckoutMenuItem = new ManagerCheckoutMenuItem("5 - Checkout A Movie", movieManager,userManager);
+        ManagerGiveBackMenuItem movieManagerGiveBackMenuItem = new ManagerGiveBackMenuItem("6 - Return A Movie", movieManager,userManager);
         UserManagerLoginMenuItem userManagerLoginMenuItem = new UserManagerLoginMenuItem("7 - Login", userManager);
         UserManagerLogoutMenuItem userManagerLogoutMenuItem = new UserManagerLogoutMenuItem("8 - Logout", userManager);
         UserMangerUserDetailMenuItem userMangerUserDetailMenuItem = new UserMangerUserDetailMenuItem("9 - User Details", userManager);

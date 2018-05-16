@@ -67,4 +67,27 @@ public class BookManager implements LibraryItemManagerInterface {
         return new Book(bookName, authorName, publicationYear);
     }
 
+    public void checkoutItemPressed() {
+        Book userBook = this.getBookDetails();
+        Book libraryBook = this.getBookFromLibrary(userBook);
+        if(libraryBook != null){
+            System.out.println(libraryBook.checkout());
+        }
+        else{
+            System.out.println("That book is not available.");
+
+        }
+    }
+
+    public void returnItemPressed() {
+        Book userBook = this.getBookDetails();
+        Book libraryBook = this.getBookFromLibrary(userBook);
+        if(libraryBook != null){
+            System.out.println(libraryBook.giveBack());
+        }
+        else{
+            System.out.println("That is not a valid book to return.");
+
+        }
+    }
 }

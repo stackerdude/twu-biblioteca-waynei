@@ -5,7 +5,6 @@ import com.twu.biblioteca.models.User;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import static org.junit.Assert.assertEquals;
 
 public class UserManager {
 

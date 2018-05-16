@@ -16,4 +16,20 @@ public interface LibraryItemManagerInterface {
      * List all the avaiable libraryItems in the library to System.out
      */
     public void listItems();
+
+    /**
+     * Called when the item in this manager wants to be borrowed
+     */
+
+    public void checkoutItemPressed();
+
+    /**
+     * Called when the item is this manager wants to be given back
+     */
+
+    public void returnItemPressed();
+
+
+
+
 }

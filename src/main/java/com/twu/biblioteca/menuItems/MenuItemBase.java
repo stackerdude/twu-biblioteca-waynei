@@ -49,5 +49,5 @@ abstract public class MenuItemBase {
     /**
      * Fucntion that gets called when the menu option is selected
      */
-    abstract void wasSelected();
+    public abstract void wasSelected();
 }
